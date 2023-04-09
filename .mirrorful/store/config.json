@@ -1,0 +1,119 @@
+{
+	"tokens": {
+		"typography": {
+			"fontSizes": [
+				{
+					"value": 1,
+					"unit": "rem",
+					"name": "sm"
+				},
+				{
+					"value": 1.2,
+					"unit": "rem",
+					"name": "md"
+				},
+				{
+					"value": 1.4,
+					"unit": "rem",
+					"name": "lg"
+				}
+			]
+		},
+		"colorData": [
+			{
+				"name": "primary",
+				"baseColor": "#03045E",
+				"variants": {
+					"500": "#03045E"
+				}
+			},
+			{
+				"name": "secondary",
+				"baseColor": "#023E8A",
+				"variants": {
+					"500": "#023E8A"
+				}
+			},
+			{
+				"name": "Blue 2",
+				"baseColor": "#0077B6",
+				"variants": {
+					"500": "#0077B6"
+				}
+			},
+			{
+				"name": "Sky Blue",
+				"baseColor": "#0096C7",
+				"variants": {
+					"500": "#0096C7"
+				}
+			},
+			{
+				"name": "Light Sky Blue",
+				"baseColor": "#00B4D8",
+				"variants": {
+					"500": "#00B4D8"
+				}
+			},
+			{
+				"name": "Light Blue",
+				"baseColor": "#48CAE4",
+				"variants": {
+					"500": "#48CAE4"
+				}
+			},
+			{
+				"name": "Lighter Blue",
+				"baseColor": "#90E0EF",
+				"variants": {
+					"500": "#90E0EF"
+				}
+			},
+			{
+				"name": "Other Blue",
+				"baseColor": "#ADE8F4",
+				"variants": {
+					"500": "#ADE8F4"
+				}
+			},
+			{
+				"name": "Lightest Blue",
+				"baseColor": "#CAF0F8",
+				"variants": {
+					"500": "#CAF0F8"
+				}
+			}
+		],
+		"shadows": [
+			{
+				"name": "sm",
+				"value": "0 1px 2px 0 rgba(0, 0, 0, 0.05)"
+			},
+			{
+				"name": "md",
+				"value": "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)"
+			},
+			{
+				"name": "lg",
+				"value": "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)"
+			},
+			{
+				"name": "dark-lg",
+				"value": "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)"
+			}
+		]
+	},
+	"files": [
+		"css",
+		"scss",
+		"js",
+		"cjs",
+		"ts",
+		"json"
+	],
+	"__internal__": {
+		"migrations": {
+			"version": "0.0.5"
+		}
+	}
+}
