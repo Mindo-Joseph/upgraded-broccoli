@@ -26,6 +26,11 @@
       <%= f.label :password_confirmation, class: label_class %>
       <%= f.password_field :password_confirmation, autocomplete: "new-password", class: input_class %>
     </div>
+    <div class="flex justify-start field">
+      <%= f.label :role, "Role" %>
+      <%= f.select :role, [['Learner', 'learner'], ['Tutor', 'tutor']]%>
+
+    </div>
 
     <div class="mb-6">
       <%= f.submit "Sign up", class: button_class(variant: "expanded", theme: "primary") %>
