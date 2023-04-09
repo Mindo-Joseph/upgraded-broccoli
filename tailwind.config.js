@@ -1,3 +1,5 @@
+const {Tokens} = require('./.mirrorful/theme_cjs')
+
 module.exports = {
   content: [
     './app/views/**/*.html.erb',
@@ -5,7 +7,7 @@ module.exports = {
     './app/javascript/**/*.{js, jsx, vue}'
   ],
   theme: {
-    extend: {},
+    extend: {colors: Tokens.colors},
   },
   plugins: [
     require('@tailwindcss/forms'),
