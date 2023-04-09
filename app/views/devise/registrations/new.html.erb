@@ -24,16 +24,22 @@
 
     <div class="mb-6">
       <%= f.label :password_confirmation, class: label_class %>
-      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: input_class %>
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: input_class, id: "password_confirmation_field" %>
     </div>
     <div class="flex justify-start field">
       <%= f.label :role, "Role" %>
       <%= f.select :role, [['Learner', 'learner'], ['Tutor', 'tutor']]%>
+      <% if resource.errors[:role].any? %>
+  <div class="text-red-600 mt-2">
+    <%= resource.errors[:role].join(", ") %>
+  </div>
+<% end %>
+
 
     </div>
 
     <div class="mb-6">
-      <%= f.submit "Sign up", class: button_class(variant: "expanded", theme: "primary") %>
+      <%= f.submit "Sign up", class: button_class(variant: "expanded", theme: "primary"), id: "sign_up_btn" %>
     </div>
   <% end %>
 <% end %>
