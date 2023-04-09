@@ -84,4 +84,4 @@ production:
   database: polyappteach_production
   username: polyappteach
   password: <%= ENV["POLYAPPTEACH_DATABASE_PASSWORD"] %>
-  url: <%= ENV['DATABASE_URL']
+  url: <%= ENV['DATABASE_URL'] %>
