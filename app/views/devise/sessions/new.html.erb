@@ -3,7 +3,7 @@
 
     <div class="mb-6">
       <%= f.label :email, class: label_class %>
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: input_class %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: input_class, id: "user_email" %>
     </div>
 
     <div class="mb-6">
@@ -19,7 +19,7 @@
     </div>
 
     <div class="mb-6">
-      <%= f.submit "Sign in", class: button_class(theme: "primary", variant: "expanded") %>
+      <%= f.submit "Sign in", class: button_class(theme: "primary", variant: "expanded"), id: "sign_in_btn" %>
     </div>
   <% end %>
 <% end %>

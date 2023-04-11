@@ -5,11 +5,11 @@
 
     <div class="mb-6">
       <%= f.label :email, class: label_class %>
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: input_class %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: input_class, id: "email_reset" %>
     </div>
 
     <div class="mb-6">
-      <%= f.submit "Send password reset instructions", class: button_class(variant: "expanded", theme: "primary") %>
+      <%= f.submit "Send password reset instructions", class: button_class(variant: "expanded", theme: "primary"), id: 'password_reset_instructions' %>
     </div>
   <% end %>
 <% end %>
