@@ -23,7 +23,7 @@ RSpec.feature "Authentications", type: :feature do
     expect(page).to have_content "Email can't be blank"
     expect(page).to have_content "Password can't be blank"
     # expect(page).to have_content "Role can't be blank"
-    
+
   end
 
 
@@ -52,7 +52,32 @@ RSpec.feature "Authentications", type: :feature do
 
     expect(page).to have_content "Invalid Email or password."
   end
-  # password recover
+  # password recovery
+  # scenario "User successfully resets their password" do
+  #   user = FactoryBot.create(:user, email: "user@example.com", password: "oldpassword")
+  #   visit '/users/password/new'
+  #   fill_in "email_reset", with: "user@example.com"
+  #   click_on "password_reset_instructions"
+
+  #   reset_email = ActionMailer::Base.deliveries.last
+  #   expect(reset_email.to).to include "user@example.com"
+  #   expect(reset_email.body.encoded).to match /reset_password_token/
+
+  #   token = reset_email.body.match(/reset_password_token=(?<token>[^"]+)/)[:token]
+  #   visit "/users/password/edit?reset_password_token=#{token}"
+  #   fill_in "New password", with: "newpassword"
+  #   fill_in "Confirm new password", with: "newpassword"
+  #   click_on "Change my password"
+
+  #   visit "/users/sign_in"
+  #   fill_in "user_email", with: "user@example.com"
+  #   fill_in "Password", with: "newpassword"
+  #   click_on "sign_in_btn"
+
+  #   expect(page).to have_content("Signed in successfully.")
+
+  # end
+
   # role based authorization
 
 end

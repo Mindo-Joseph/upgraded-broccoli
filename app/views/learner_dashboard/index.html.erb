@@ -1,0 +1,101 @@
+<div class="flex min-h-screen bg-blue-50">
+  <aside class="bg-blue-500 text-white w-64 p-6 space-y-6">
+    <h1 class="text-xl">Learner Dashboard</h1>
+    <nav class="space-y-4">
+      <a href="#" class="flex items-center space-x-2 block px-4 py-2 rounded hover:bg-blue-700">
+        <i class="fas fa-tachometer-alt"></i><span>Dashboard</span>
+      </a>
+      <a href="#" class="flex items-center space-x-2 block px-4 py-2 rounded hover:bg-blue-700">
+        <i class="fas fa-users"></i><span>Community</span>
+      </a>
+      <a href="#" class="flex items-center space-x-2 block px-4 py-2 rounded hover:bg-blue-700">
+        <i class="fas fa-calendar-alt"></i><span>Events</span>
+      </a>
+      <a href="#" class="flex items-center space-x-2 block px-4 py-2 rounded hover:bg-blue-700">
+        <i class="fas fa-chart-bar"></i><span>Analytics</span>
+      </a>
+      <a href="#" class="flex items-center space-x-2 block px-4 py-2 rounded hover:bg-blue-700">
+        <i class="fas fa-question-circle"></i><span>Help Center</span>
+      </a>
+      <a href="#" class="flex items-center space-x-2 block px-4 py-2 rounded hover:bg-blue-700">
+        <i class="fas fa-cog"></i><span>Settings</span>
+      </a>
+    </nav>
+  </aside>
+  <main class="flex-grow p-6">
+    <div class="bg-white rounded-lg shadow p-6 space-y-2">
+      <div class="flex justify-between items-center">
+        <div>
+          <h2 class="text-xl font-semibold">Welcome back, <%= current_user.name %>,</h2>
+          <p><%= Date.current.strftime('%B %d, %Y') %></p>
+        </div>
+        <div class="flex space-x-4">
+          <a id="chat-btn" onclick="openChatModal()" class="fixed bottom-8 right-8 bg-blue-500 text-white p-4 rounded-full shadow hover:bg-blue-700">
+            <i class="fas fa-comments fa-lg"></i>
+          </a>
+          <a href="#" class="text-blue-500 hover:text-blue-700">
+            <i class="fas fa-bell fa-lg"></i>
+          </a>
+        </div>
+        <!-- Chat Modal -->
+        <div id="chatModal" class="fixed inset-0 z-50 hidden flex items-center justify-center">
+          <div class="bg-white rounded-lg shadow-xl w-96">
+            <header class="bg-blue-500 text-white p-4 rounded-t-lg">
+              <h3 class="text-xl">Chat</h3>
+            </header>
+            <div class="p-4 space-y-4">
+              <input type="text" placeholder="Search for learners or tutors" class="w-full p-2 border-2 border-gray-300 rounded">
+              <div id="messages" class="h-64 bg-gray-100 overflow-y-auto p-4 rounded">
+                <!-- Messages will be displayed here -->
+              </div>
+              <form>
+                <div class="flex space-x-4">
+                  <input type="text" placeholder="Type a message" name="message" class="w-full p-2 border-2 border-gray-300 rounded">
+                  <button class="bg-blue-500 text-white px-4 py-2 rounded shadow hover:bg-blue-700">Send</button>
+                </div>
+              </form>
+            </div>
+            <footer class="p-4 bg-gray-200 rounded-b-lg">
+              <button onclick="closeChatModal()" class="bg-red-500 text-white px-4 py-2 rounded shadow hover:bg-red-700">Close</button>
+            </footer>
+          </div>
+        </div>
+        <script>
+          const chatModal = document.getElementById('chatModal');
+
+          function openChatModal() {
+            chatModal.classList.remove('hidden');
+          }
+
+          function closeChatModal() {
+            chatModal.classList.add('hidden');
+          }
+        </script>
+      </div>
+      <div class="bg-white rounded-lg shadow p-6 space-y-4">
+        <div class="flex justify-between items-center">
+          <h3 class="text-lg font-semibold">Lesson Name</h3>
+          <a href="#" class="text-blue-500 hover:text-blue-700">
+            <i class="fas fa-external-link-alt"></i>
+          </a>
+        </div>
+        <div class="bg-gray-200 p-2 rounded">
+          <img src="path/to/video/preview" alt="Video preview" class="max-w-full mx-auto">
+        </div>
+        <div class="flex justify-between items-center">
+          <div class="flex space-x-2">
+            <!-- Add avatar icons for each user in the class (loop through users if needed) -->
+            <img src="path/to/user/avatar" alt="User Avatar" class="rounded-full w-8 h-8 fa-users">
+            <img src="path/to/user/avatar" alt="User Avatar" class="rounded-full w-8 h-8 fa-users">
+          </div>
+          <a href="#" class="bg-blue-500 text-white px-4 py-2 rounded shadow hover:bg-blue-700">Enter the class</a>
+        </div>
+        <div class="w-full h-2 bg-gray-200 rounded">
+          <div class="h-full bg-blue-500 rounded" style="width: 75%;"></div>
+        </div>
+        <p>Class progress: 75%</p>
+      </div>
+    </div>
+    <!-- Add other sections here -->
+  </main>
+</div>
