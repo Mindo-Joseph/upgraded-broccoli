@@ -1,0 +1,277 @@
+<div class="flex min-h-screen bg-blue-50">
+<aside class="bg-blue-500 text-white w-64 p-6 space-y-6">
+  <h1 class="text-xl">Learner Dashboard</h1>
+  <nav class="space-y-4">
+    <a href="#" class="flex items-center space-x-2 block px-4 py-2 rounded hover:bg-blue-700">
+      <i class="fas fa-tachometer-alt"></i><span>Dashboard</span>
+    </a>
+    <a href="#" class="flex items-center space-x-2 block px-4 py-2 rounded hover:bg-blue-700">
+      <i class="fas fa-users"></i><span>Community</span>
+    </a>
+    <a href="#" class="flex items-center space-x-2 block px-4 py-2 rounded hover:bg-blue-700">
+      <i class="fas fa-calendar-alt"></i><span>Events</span>
+    </a>
+    <a href="#" class="flex items-center space-x-2 block px-4 py-2 rounded hover:bg-blue-700">
+      <i class="fas fa-chart-bar"></i><span>Analytics</span>
+    </a>
+    <a href="#" class="flex items-center space-x-2 block px-4 py-2 rounded hover:bg-blue-700">
+      <i class="fas fa-question-circle"></i><span>Help Center</span>
+    </a>
+    <a href="#" class="flex items-center space-x-2 block px-4 py-2 rounded hover:bg-blue-700">
+      <i class="fas fa-cog"></i><span>Settings</span>
+    </a>
+  </nav>
+</aside>
+
+<main class="flex-grow p-6">
+
+  <div class="flex justify-between items-center">
+    <div>
+      <h2 class="text-xl font-semibold">Welcome back, <%= current_user.name %>,</h2>
+      <p><%= Date.current.strftime('%B %d, %Y') %></p>
+    </div>
+    <div class="flex space-x-4">
+      <a id="chat-btn" onclick="openChatModal()" class="fixed bottom-8 right-8 bg-blue-500 text-white p-4 rounded-full shadow hover:bg-blue-700">
+        <i class="fas fa-comments fa-lg"></i>
+      </a>
+      <a href="#" class="text-blue-500 hover:text-blue-700">
+        <i class="fas fa-bell fa-lg"></i>
+      </a>
+    </div>
+    <!-- Chat Modal -->
+    <div id="chatModal" class="fixed inset-0 z-50 hidden flex items-center justify-center">
+      <div class="bg-white rounded-lg shadow-xl w-96">
+        <header class="bg-blue-500 text-white p-4 rounded-t-lg">
+          <h3 class="text-xl">Chat</h3>
+        </header>
+        <div class="p-4 space-y-4">
+          <input type="text" placeholder="Search for learners or tutors" class="w-full p-2 border-2 border-gray-300 rounded">
+          <div id="messages" class="h-64 bg-gray-100 overflow-y-auto p-4 rounded">
+            <!-- Messages will be displayed here -->
+          </div>
+          <form>
+            <div class="flex space-x-4">
+              <input type="text" placeholder="Type a message" name="message" class="w-full p-2 border-2 border-gray-300 rounded">
+              <button class="bg-blue-500 text-white px-4 py-2 rounded shadow hover:bg-blue-700">Send</button>
+            </div>
+          </form>
+        </div>
+        <footer class="p-4 bg-gray-200 rounded-b-lg">
+          <button onclick="closeChatModal()" class="bg-red-500 text-white px-4 py-2 rounded shadow hover:bg-red-700">Close</button>
+        </footer>
+      </div>
+    </div>
+    <script>
+      const chatModal = document.getElementById('chatModal');
+
+      function openChatModal() {
+        chatModal.classList.remove('hidden');
+      }
+
+      function closeChatModal() {
+        chatModal.classList.add('hidden');
+      }
+    </script>
+  </div>
+
+  <!-- Heading and date section from learner dashboard -->
+<!-- Create Language Class Button -->
+<div class="bg-white rounded-lg shadow p-6 space-y-4 mb-4">
+  <button onclick="openCreateClassModal()"
+class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+    Create a Language Class
+  </button>
+</div>
+
+<!-- Scheduled Language Classes and Class History -->
+<style>
+  .card {
+    transition: transform 0.3s;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  }
+
+  .card:hover {
+    transform: translateY(-5px);
+  }
+
+  .card-content {
+    padding: 20px 30px;
+  }
+</style>
+<div class="flex space-x-4 mb-4">
+  <!-- Scheduled Language Classes Component -->
+  <div class="card bg-white w-1/2">
+    <div class="bg-blue-500 text-white rounded-t-lg px-6 py-4">
+      <h3 class="text-lg font-semibold">Scheduled Language Classes</h3>
+    </div>
+    <div class="card-content">
+      <ul class="list-disc pl-6 space-y-2">
+        <!-- Loop through the tutor's scheduled language classes and display them -->
+        <li>January 8, 2022 - Spanish for Beginners - 10:00 AM - 1:00 PM</li>
+        <li>January 9, 2022 - French Conversation - 2:00 PM - 4:00 PM</li>
+      </ul>
+    </div>
+  </div>
+  <!-- Language Class History Component -->
+  <div class="card bg-white w-1/2">
+    <div class="bg-blue-500 text-white rounded-t-lg px-6 py-4">
+      <h3 class="text-lg font-semibold">Language Class History</h3>
+    </div>
+    <div class="card-content">
+      <ul class="list-disc pl-6 space-y-2">
+        <!-- Loop through the tutor's past language classes and display them -->
+        <li>December 1, 2021 - Italian Grammar Workshop - 6:00 PM - 8:00 PM</li>
+        <li>November 28, 2021 - Business English - 9:00 AM - 12:00 PM</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="flex space-x-4 mb-4">
+  <!-- Language Proficiency Component -->
+  <div class="card bg-white w-1/2">
+    <div class="bg-blue-500 text-white rounded-t-lg px-6 py-4">
+      <h3 class="text-lg font-semibold">Language Proficiency</h3>
+    </div>
+    <div class="card-content">
+      <ul class="list-none space-y-2">
+        <!-- Loop through the tutor's language proficiency levels and display them -->
+        <li><span class="font-bold">English</span>: Native</li>
+        <li><span class="font-bold">Spanish</span>: Advanced</li>
+        <li><span class="font-bold">French</span>: Intermediate</li>
+      </ul>
+    </div>
+  </div>
+  <!-- Teaching Languages Component -->
+  <div class="card bg-white w-1/2">
+    <div class="bg-blue-500 text-white rounded-t-lg px-6 py-4">
+      <h3 class="text-lg font-semibold">Teaching Languages</h3>
+    </div>
+    <div class="card-content">
+      <ul class="list-none space-y-2">
+        <!-- Loop through the languages the tutor is currently teaching and display them -->
+        <li>English</li>
+        <li>Spanish</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Teaching Resources and Cultural Insights -->
+<div class="flex space-x-4 mb-4">
+  <!-- Teaching Resources Component -->
+  <div class="card bg-white w-1/2">
+    <div class="bg-blue-500 text-white rounded-t-lg px-6 py-4">
+      <h3 class="text-lg font-semibold">Teaching Resources</h3>
+    </div>
+    <div class="card-content">
+      <ul class="list-disc pl-6 space-y-2">
+        <!-- Loop through the teaching resources and display them -->
+        <li>Language Practice Worksheets</li>
+        <li>Multimedia Learning Materials</li>
+        <li>Grammar Exercises</li>
+      </ul>
+    </div>
+  </div>
+  <!-- Cultural Insights Component -->
+  <div class="card bg-white w-1/2">
+    <div class="bg-blue-500 text-white rounded-t-lg px-6 py-4">
+      <h3 class="text-lg font-semibold">Cultural Insights</h3>
+    </div>
+    <div class="card-content">
+      <ul class="list-disc pl-6 space-y-2">
+        <!-- Loop through the cultural insights and display them -->
+        <li>Spanish-speaking countries culture</li>
+        <li>French popular sayings and expressions</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<!-- Student Progress and Tutor Feedback -->
+<div class="flex space-x-4 mb-4">
+  <!-- Student Progress Component -->
+  <div class="card bg-white w-1/2">
+    <div class="bg-blue-500 text-white rounded-t-lg px-6 py-4">
+      <h3 class="text-lg font-semibold">Student Progress</h3>
+    </div>
+    <div class="card-content">
+      <table class="table-auto w-full text-left">
+        <thead>
+          <tr class="border-b border-gray-200">
+            <th class="pb-2">Student</th>
+            <th class="pb-2">Level</th>
+            <th class="pb-2">Progress</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Loop through student progress and display the information -->
+          <tr class="border-b border-gray-100">
+            <td class="py-2">John Doe</td>
+            <td class="py-2">Intermediate</td>
+            <td class="py-2">60%</td>
+          </tr>
+          <tr class="border-b border-gray-100">
+            <td class="py-2">Jane Smith</td>
+            <td class="py-2">Beginner</td>
+            <td class="py-2">30%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <!-- Tutor Feedback Component -->
+  <div class="card bg-white w-1/2">
+    <div class="bg-blue-500 text-white rounded-t-lg px-6 py-4">
+      <h3 class="text-lg font-semibold">Tutor Feedback</h3>
+    </div>
+    ()
+    <div class="card-content">
+      <ul class="list-disc pl-6 space-y-2">
+        <!-- Loop through the tutor feedback and display them -->
+        <li>"Great progress in pronunciation!" - Student: Alice</li>
+        <li>"Keep practicing your listening skills." - Student: Bob</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+</main>
+<div id="createClassModal" class="fixed inset-0 z-50 hidden flex items-center justify-center">
+  <div class="bg-white rounded-lg w-96">
+    <header class="bg-blue-500 text-white p-4 rounded-t-lg">
+      <h3 class="text-xl">Create a Language Class</h3>
+    </header>
+    <div class="p-4 space-y-4">
+      <input type="text" placeholder="Class name" id="className" class="w-full p-2 border-2 border-gray-300 rounded">
+      <input type="datetime-local" id="classTime" class="w-full p-2 border-2 border-gray-300 rounded">
+      <button onclick="createZoomLink()" class="bg-blue-500 text-white px-4 py-2 rounded shadow hover:bg-blue-700">Create Zoom Link</button>
+    </div>
+    <footer class="p-4 bg-gray-200 rounded-b-lg">
+      <button onclick="closeCreateClassModal()" class="bg-red-500 text-white px-4 py-2 rounded shadow hover:bg-red-700">Close</button>
+    </footer>
+  </div>
+</div>
+<script>
+  const createClassModal = document.getElementById('createClassModal');
+
+  function openCreateClassModal() {
+    createClassModal.classList.remove('hidden');
+  }
+
+  function closeCreateClassModal() {
+    createClassModal.classList.add('hidden');
+  }
+
+  function createZoomLink() {
+    const className = document.getElementById('className').value;
+    const classTime = document.getElementById('classTime').value;
+
+    // Code to create a Zoom link using the class name and time, and integrating it with your Rails application
+  }
+</script>
+
+</div>

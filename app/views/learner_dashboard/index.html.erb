@@ -97,5 +97,59 @@
       </div>
     </div>
     <!-- Add other sections here -->
+    <div class="flex flex-col space-x-4 mb-4 bg-white rounded-lg shadow px-6 py-4 space-y-6">
+  <h3 class="text-lg font-semibold">Learning Goals and Study Plan</h3>
+  <form class="flex flex-col space-y-4">
+    <div class="relative">
+      <label for="goal" class="absolute -top-2 left-2 bg-white px-1 text-xs text-gray-600">Create a Learning Goal</label>
+      <input type="text" id="goal" name="goal" class="w-full p-2 pl-4 border-2 border-gray-300 rounded" placeholder="Enter your learning goal">
+    </div>
+    <button class="bg-blue-500 text-white px-4 py-2 rounded shadow-md hover:bg-blue-700">Set Goal</button>
+  </form>
+  <div class="border-t border-gray-200 pt-4">
+    <h4 class="text-base font-semibold mb-2">Current Goals:</h4>
+    <ul class="list-disc pl-6 space-y-2">
+      <!-- Loop through the user's learning goals and display them -->
+      <li>Learn Ruby on Rails</li>
+      <li>Finish Course XYZ</li>
+    </ul>
+  </div>
+  <div class="border-t border-gray-200 pt-4">
+    <h4 class="text-base font-semibold mb-2">Study Plan:</h4>
+    <div class="relative">
+      <label for="studyPlan" class="absolute -top-2 left-2 bg-white px-1 text-xs text-gray-600">Write your study plan here</label>
+      <textarea id="studyPlan" class="w-full h-32 p-2 pl-4 border-2 border-gray-300 rounded"></textarea>
+    </div>
+    <button class="bg-blue-500 text-white px-4 py-2 mt-4 rounded shadow-md hover:bg-blue-700">Save Study Plan</button>
+  </div>
+</div>
+<!-- Calendar component -->
+<div class="bg-white rounded-lg shadow px-6 py-4 space-y-6" style="flex: 1;">
+  <h3 class="text-lg font-semibold">Upcoming Lessons</h3>
+  <table class="table-auto w-full text-left">
+    <thead>
+      <tr class="border-b border-gray-200">
+        <th class="pb-2">Date</th>
+        <th class="pb-2">Lesson</th>
+        <th class="pb-2">Time</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Loop through upcoming lessons and display the lesson information -->
+      <tr class="border-b border-gray-100">
+        <td class="py-2">January 8, 2022</td>
+        <td class="py-2">Ruby on Rails Intro</td>
+        <td class="py-2">10:00 AM - 1:00 PM</td>
+      </tr>
+      <tr class="border-b border-gray-100">
+        <td class="py-2">January 9, 2022</td>
+        <td class="py-2">JavaScript Basics</td>
+        <td class="py-2">10:00 AM - 1:00 PM</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
   </main>
 </div>
