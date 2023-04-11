@@ -1,27 +1,6 @@
 <div class="flex min-h-screen bg-blue-50">
-<aside class="bg-blue-500 text-white w-64 p-6 space-y-6">
-  <h1 class="text-xl">Learner Dashboard</h1>
-  <nav class="space-y-4">
-    <a href="#" class="flex items-center space-x-2 block px-4 py-2 rounded hover:bg-blue-700">
-      <i class="fas fa-tachometer-alt"></i><span>Dashboard</span>
-    </a>
-    <a href="#" class="flex items-center space-x-2 block px-4 py-2 rounded hover:bg-blue-700">
-      <i class="fas fa-users"></i><span>Community</span>
-    </a>
-    <a href="#" class="flex items-center space-x-2 block px-4 py-2 rounded hover:bg-blue-700">
-      <i class="fas fa-calendar-alt"></i><span>Events</span>
-    </a>
-    <a href="#" class="flex items-center space-x-2 block px-4 py-2 rounded hover:bg-blue-700">
-      <i class="fas fa-chart-bar"></i><span>Analytics</span>
-    </a>
-    <a href="#" class="flex items-center space-x-2 block px-4 py-2 rounded hover:bg-blue-700">
-      <i class="fas fa-question-circle"></i><span>Help Center</span>
-    </a>
-    <a href="#" class="flex items-center space-x-2 block px-4 py-2 rounded hover:bg-blue-700">
-      <i class="fas fa-cog"></i><span>Settings</span>
-    </a>
-  </nav>
-</aside>
+<%= render 'shared/aside' %>
+
 
 <main class="flex-grow p-6">
 
@@ -271,6 +250,7 @@ class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
     const classTime = document.getElementById('classTime').value;
 
     // Code to create a Zoom link using the class name and time, and integrating it with your Rails application
+    
   }
 </script>
 

@@ -1,0 +1,217 @@
+<!-- Community Page Layout -->
+<div class="container mx-auto px-4">
+  <h1 class="text-2xl font-bold mb-8">Community</h1>
+  <div class="grid grid-cols-2 gap-4 mb-4">
+    <!-- Left Column -->
+    <div>
+      <!-- Leaderboard Component -->
+      <style>
+        .leaderboard-item {
+          display: flex;
+          align-items: flex-start;
+          padding: 10px;
+          border-bottom: 1px solid #eee;
+        }
+
+        .leaderboard-item:last-child {
+          border-bottom: none;
+        }
+
+        .rank {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 1.25rem;
+          font-weight: bold;
+          width: 40px;
+          height: 40px;
+          background-color: #eee;
+          border-radius: 50%;
+          margin-right: 10px;
+        }
+
+        .user-info {
+          flex-grow: 1;
+        }
+
+        .points {
+          background-color: #f3f3f3;
+          color: #888;
+          font-weight: bold;
+          display: inline-flex;
+          align-items: center;
+          padding: 3px 6px;
+          margin-left: 5px;
+          border-radius: 5px;
+          font-size: 0.8rem;
+        }
+      </style>
+      <!-- Leaderboard Component -->
+      <div class="card bg-white">
+        <div class="bg-blue-500 text-white rounded-t-lg px-6 py-4">
+          <h3 class="text-lg font-semibold">Leaderboard</h3>
+        </div>
+        <div class="card-content">
+          <!-- Loop through the leaderboard users and display rankings, names, and points -->
+          <div class="leaderboard-item">
+            <div class="rank">1</div>
+            <div class="user-info">
+              <strong>John Doe</strong><span class="points">120 points</span>
+            </div>
+          </div>
+          <div class="leaderboard-item">
+            <div class="rank">2</div>
+            <div class="user-info">
+              <strong>Jane Smith</strong><span class="points">80 points</span>
+            </div>
+          </div>
+          <!-- More leaderboard items -->
+        </div>
+      </div>
+      <!-- Q&A Section -->
+      <style>
+  .qa-item {
+    display: flex;
+    align-items: flex-start;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .qa-item:last-child {
+    border-bottom: none;
+  }
+
+  .question-tag {
+    background-color: #f3f3f3;
+    color: #888;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    padding: 5px;
+    margin-right: 5px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+  }
+
+  .question-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+</style>
+<!-- Q&A Section -->
+<div class="card bg-white  mt-4">
+  <div class="bg-blue-500 text-white rounded-t-lg px-6 py-4">
+    <h3 class="text-lg font-semibold">Q&A Section</h3>
+  </div>
+  <div class="card-content">
+    <!-- Loop through the questions and display them -->
+    <div class="qa-item">
+      <div class="user-info">
+        <div class="question-title">
+          What's the best way to learn multiple languages at once?
+        </div>
+        <span class="question-tag">Language Learning</span>
+        <span class="question-tag">Study Tips</span>
+      </div>
+    </div>
+    <div class="qa-item">
+      <div class="user-info">
+        <div class="question-title">
+          Can you recommend any resources for learning advanced Spanish grammar?
+        </div>
+        <span class="question-tag">Spanish</span>
+        <span class="question-tag">Grammar</span>
+      </div>
+    </div>
+    <!-- More Q&A items -->
+  </div>
+</div>
+
+    </div>
+    <!-- Right Column -->
+    <div>
+      <style>
+  .component-item {
+    display: flex;
+    align-items: flex-start;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .component-item:last-child {
+    border-bottom: none;
+  }
+
+  .tag {
+    background-color: #f3f3f3;
+    color: #888;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    padding: 5px;
+    margin-right: 5px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+  }
+
+  .title {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+</style>
+<!-- Learning Resources Component -->
+<div class="card bg-white">
+  <div class="bg-blue-500 text-white rounded-t-lg px-6 py-4">
+    <h3 class="text-lg font-semibold">Learning Resources</h3>
+  </div>
+  <div class="card-content">
+    <!-- Loop through the learning resources and display them -->
+    <div class="component-item">
+      <div class="user-info">
+        <div class="title">
+          Top 10 Language Learning Podcasts
+        </div>
+        <span class="tag">Podcasts</span>
+      </div>
+    </div>
+    <div class="component-item">
+      <div class="user-info">
+        <div class="title">
+          The Secrets of Polyglots
+        </div>
+        <span class="tag">Articles</span>
+      </div>
+    </div>
+    <!-- More learning resource items -->
+  </div>
+</div>
+<!-- Success Stories Component -->
+<div class="card bg-white mt-4">
+  <div class="bg-blue-500 text-white rounded-t-lg px-6 py-4">
+    <h3 class="text-lg font-semibold">Success Stories</h3>
+  </div>
+  <div class="card-content">
+    <!-- Loop through the success stories and display them -->
+    <div class="component-item">
+      <div class="user-info">
+        <div class="title">
+          From Beginner to Fluent in 6 Months
+        </div>
+        <span class="tag">Milestones</span>
+      </div>
+    </div>
+    <div class="component-item">
+      <div class="user-info">
+        <div class="title">
+          Learning a New Language as an Adult
+        </div>
+        <span class="tag">Challenges</span>
+      </div>
+    </div>
+    <!-- More success story items -->
+  </div>
+</div>
+
+    </div>
+  </div>
+</div>

@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/joe/Desktop/Rails/polyappteach/spec/views/tutor_dashboard/index.html.erb_spec.rb": {
+      "/Users/joe/Desktop/Rails/polyappteach/spec/views/community/index.html.erb_spec.rb": {
         "lines": [
           1,
           null,
@@ -655,13 +655,15 @@
           1,
           null,
           1,
-          1,
           null,
           1,
+          null,
+          1,
           1,
           null,
           null,
           null,
+          1,
           1,
           1,
           1,
@@ -770,6 +772,12 @@
           null
         ]
       },
+      "/Users/joe/Desktop/Rails/polyappteach/app/helpers/community_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
       "/Users/joe/Desktop/Rails/polyappteach/app/helpers/learner_dashboard_helper.rb": {
         "lines": [
           1,
@@ -789,6 +797,6 @@
         ]
       }
     },
-    "timestamp": 1681178310
+    "timestamp": 1681180107
   }
 }
