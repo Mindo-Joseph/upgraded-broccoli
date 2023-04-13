@@ -2,24 +2,40 @@
   "name": "app",
   "private": "true",
   "dependencies": {
+    "@babel/preset-react": "^7.18.6",
+    "@heroicons/react": "^2.0.17",
     "@hotwired/stimulus": "^3.2.1",
     "@hotwired/turbo-rails": "^7.3.0",
     "@rails/actiontext": "^7.0.4-3",
+    "@rails/webpacker": "5.4.4",
     "autoprefixer": "^10.4.14",
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
+    "daisyui": "^2.51.5",
     "esbuild": "^0.17.15",
     "postcss": "^8.4.21",
+    "prop-types": "^15.8.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react_ujs": "^2.6.2",
     "tailwindcss": "^3.3.1",
-    "trix": "^2.0.4"
+    "trix": "^2.0.4",
+    "webpack": "^4.46.0",
+    "webpack-cli": "^3.3.12"
   },
   "scripts": {
     "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds --public-path=assets",
-    "build:css": "tailwindcss -i ./app/assets/stylesheets/application.tailwind.css -o ./app/assets/builds/application.css --minify"
+    "build:css": "tailwindcss -i ./app/assets/stylesheets/application.tailwind.css -o ./app/assets/builds/application.css --minify",
+    "lint": "eslint 'app/javascript/**/*.{js,jsx}'"
   },
   "devDependencies": {
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/forms": "^0.5.3",
     "@tailwindcss/line-clamp": "^0.4.4",
     "@tailwindcss/typography": "^0.5.9",
-    "mirrorful": "^5.0.7"
+    "babel-eslint": "^10.1.0",
+    "eslint": "^8.38.0",
+    "eslint-plugin-react": "^7.32.2",
+    "mirrorful": "^5.0.7",
+    "webpack-dev-server": "^3"
   }
 }
