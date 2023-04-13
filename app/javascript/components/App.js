@@ -3,6 +3,7 @@ import Head from './Head';
 import SearchContext from './contexts/SearchContext';
 import SearchResultList from './SearchResultList';
 import SearchBar from './SearchBar';
+import SideNav from "./SideNav/SideNav";
 
 
 const App = () => {
@@ -10,7 +11,7 @@ const App = () => {
     const [searchResults, setSearchResults] = useState([]);
 
     return (
-        <>
+        <div className="flex flex-col">
             <SearchContext.Provider
                 value={{
                     searchQuery,
@@ -22,7 +23,9 @@ const App = () => {
                 <SearchBar />
                 <SearchResultList />
             </SearchContext.Provider>
-        </>
+
+            <SideNav />
+        </div>
     )
 }
 export default App;
