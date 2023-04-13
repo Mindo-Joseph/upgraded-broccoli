@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from "prop-types";
-import {ChartBarSquareIcon} from "@heroicons/react/20/solid";
+import {ChartBarSquareIcon} from "@heroicons/react/24/outline";
 import {CalendarIcon} from "@heroicons/react/20/solid";
 import {ChatBubbleLeftIcon} from "@heroicons/react/20/solid";
 import {BookOpenIcon} from "@heroicons/react/20/solid";
@@ -13,7 +13,7 @@ import {PlusIcon} from "@heroicons/react/24/outline";
 
 const UploadButton = ({className, icon, label}) => {
     const defaultClass = `flex items-center justify-start w-full py-2 pl-4 rounded-lg hover:bg-gray-200}`;
-    const appliedClass = className || appliedClass;
+    const appliedClass = className || defaultClass;
     return (
         <button className={appliedClass}>
             <span className="inline-block mr-4">{icon}</span>
@@ -23,8 +23,8 @@ const UploadButton = ({className, icon, label}) => {
 };
 const NavButton = ({icon, label}) => {
     return (
-        <button className="flex flex-row">
-            <span className="icon">
+        <button className="flex">
+            <span className="icon bg-red-800">
                 {icon}
             </span>
             <span className="label">
@@ -36,15 +36,14 @@ const NavButton = ({icon, label}) => {
 
 const SideNavTop = () => {
     return (
-        <div className="flex flex-col">
+        <div className="flex flex-col bg-gray-700">
             <div className="flex flex-row" id={"logo-section"}>
-                TODO: Logo
                 <h3 className="text-2xl font-bold">Logo</h3>
             </div>
-            <div className="flex flex-row" id={"user-profile"}>
+            <div className="flex" id={"user-profile"}>
                 <div className="avatar">
                     <div className="w-24 rounded-full">
-                        <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                        {/* <img src="{}" /> */}
                     </div>
                 </div>
                 <div className="user-info flex flex-col">
@@ -58,9 +57,10 @@ const SideNavTop = () => {
 
 const SideNav = () => {
     return(
-        <aside className="flex flex-col">
+        <aside className="flex flex-col w-auto">
             <SideNavTop />
-            <div className="flex flex-col justify-around" id={"nav-buttons"}>
+            {/* TODO: Ensure the icons are showing */}
+            <div className="flex flex-col" id={"nav-buttons"}>
                 <NavButton icon={<ChartBarSquareIcon/>} label={"Dashboard"} />
                 <NavButton icon={<CalendarIcon/>} label={"Schedule"} />
                 <NavButton icon={<ChatBubbleLeftIcon/>} label={"Chat"} />
