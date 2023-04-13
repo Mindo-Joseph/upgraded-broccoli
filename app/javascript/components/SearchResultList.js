@@ -11,6 +11,7 @@ const SearchResultList = () => {
             }
             )}
         </ul>
+        
     )
 };
 export default SearchResultList;
