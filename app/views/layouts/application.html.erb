@@ -8,7 +8,7 @@
       <%= render "shared/flash_notice" %>
 
     </header>
-    <main class="flex-grow" id="root">
+    <main class="flex-grow pt-4 pl-4" id="root">
       <%= render "shared/navbar" %>
       <%= content_for?(:content) ? yield(:content) : yield %>
     </main>
