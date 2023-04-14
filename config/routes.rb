@@ -1,6 +1,12 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
+  namespace :api do
+    namespace :v1 do
+      get 'users/current', to: 'users#current'
+    end
+  end
+
   get 'help_center/index'
   get 'events/index'
 
@@ -17,7 +23,7 @@ Rails.application.routes.draw do
   get 'community', to: 'community#index', as: :community
   get 'events', to: 'events#index', as: :events
   get 'help_center', to: 'help_center#index', as: :help_center
-  
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
