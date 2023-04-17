@@ -4,14 +4,8 @@
   <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   <body class="font-sans font-normal leading-normal text-gray-800 bg-white flex flex-col min-h-screen ">
-    <header>
-      <%= render "shared/flash_notice" %>
-
-    </header>
     <main class="flex-grow pt-4 pl-4" id="root">
-      <%= render "shared/navbar" %>
       <%= content_for?(:content) ? yield(:content) : yield %>
     </main>
-    <%= render "shared/footer" %>
   </body>
 </html>

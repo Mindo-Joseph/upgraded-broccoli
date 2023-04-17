@@ -1,6 +1,6 @@
 class TutorDashboardController < ApplicationController
   before_action :authenticate_user!
-  before_action :ensure_tutor
+  # before_action :ensure_tutor
 
   def index
     puts current_user.role

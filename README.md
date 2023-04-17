@@ -1,24 +1,13 @@
-# README
+# Project Title: PolyglotConnect
+# Description: A simple web application that allows users to connect with other users based on their language skills.
+## Features
+* Authentication: Users can sign up and log in to the application. Once logged in, users can access all the features of the application.
+* Book classes: Users can book classes with other users based on their language skills.
+* Tutors: Users can also sign up to be tutors and teach other users.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Installation
+* Clone the repository
+* Navigate to the project directory
+* Install dependencies using  `yarn add`
+* Install webpacker using `rails webpacker:install`
+* 
